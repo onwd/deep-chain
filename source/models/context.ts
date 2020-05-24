@@ -1,6 +1,6 @@
 import { Key } from '../types';
 
-export class DeepContext {
+export class Context {
   public root: any;
   public entry: any;
   public key: Key;
@@ -8,7 +8,7 @@ export class DeepContext {
   public chain: any;
   public clone: boolean;
 
-  constructor(context?: Partial<DeepContext>) {
+  constructor(context?: Partial<Context>) {
     Object.assign(this, context);
   }
 }

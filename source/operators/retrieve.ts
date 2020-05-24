@@ -1,4 +1,4 @@
-import { DeepContext } from '../models';
+import { Context } from '../models';
 
-export const retrieve = (context: DeepContext) =>
+export const retrieve = (context: Context) =>
                         () => context.entry;

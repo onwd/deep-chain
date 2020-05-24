@@ -1,1 +1,1 @@
-export { DeepOptions } from './deep-options';
+export { Options } from './options';

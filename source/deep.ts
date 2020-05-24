@@ -1,13 +1,13 @@
 import * as deepOperators from './operators';
 import { clone, mapValues } from 'lodash';
-import { DeepContext } from './models';
-import { DeepOptions } from './interfaces';
+import { Context } from './models';
 import { Key } from './types';
+import { Options } from './interfaces';
 
-export function deep(root: any, options?: DeepOptions): any {
+export function deep(root: any, options?: Options): any {
   root = (options?.clone) ? clone(root) : root;
 
-  const context = new DeepContext({
+  const context = new Context({
     root,
     entry: root,
     clone: options?.clone ?? false

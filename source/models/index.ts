@@ -1,1 +1,1 @@
-export { DeepContext } from './deep-context';
+export { Context } from './context';

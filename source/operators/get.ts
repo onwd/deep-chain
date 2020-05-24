@@ -1,8 +1,8 @@
 import { clone } from 'lodash';
-import { DeepContext } from '../models';
+import { Context } from '../models';
 import { Key } from '../types';
 
-export const get = (context: DeepContext) =>
+export const get = (context: Context) =>
                    (key: Key) => {
   context.parent = context.entry;
   context.key = key;

@@ -1,4 +1,4 @@
-export interface DeepOptions {
+export interface Options {
   clone?: boolean;
   operators?: any;
 }
