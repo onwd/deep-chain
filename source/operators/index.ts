@@ -1,3 +1,4 @@
+export { assign } from './assign';
 export { filter } from './filter';
 export { find } from './find';
 export { get } from './get';
