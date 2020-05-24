@@ -1,0 +1,32 @@
+{
+  "name": "deep-chain",
+  "version": "1.0.0",
+  "description": "Helper to retrieve nested property value.",
+  "main": "build/index.js",
+  "types": "build/index.d.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onwd/deep-chain.git"
+  },
+  "author": "onwd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onwd/deep-chain/issues"
+  },
+  "homepage": "https://github.com/onwd/deep-chain#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "@types/lodash": "^4.14.152",
+    "fast-check": "^1.24.2",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.3"
+  }
+}
