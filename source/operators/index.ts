@@ -3,6 +3,7 @@ export { filter } from './filter';
 export { find } from './find';
 export { get } from './get';
 export { insertAt } from './insert-at';
+export { map } from './map';
 export { modify } from './modify';
 export { retrieve } from './retrieve';
 export { retrieveRoot } from './retrieve-root';
