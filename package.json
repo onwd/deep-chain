@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.5",
-    "@types/lodash": "^4.14.157",
+    "@types/lodash": "^4.14.158",
     "fast-check": "^1.26.0",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.3",
