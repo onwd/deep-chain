@@ -4,6 +4,7 @@ import {
   FilterCommand,
   FindCommand,
   GetCommand,
+  MapCommand,
   RetrieveCommand
 } from './commands';
 import { cloneDeep, isEqual } from 'lodash';
@@ -16,6 +17,7 @@ test('immutability', () => {
     fc.oneof(fc.string(), fc.integer()).map((key) => new GetCommand(key)),
     fc.constant(new FilterCommand(() => true)),
     fc.constant(new FindCommand()),
+    fc.constant(new MapCommand((value: any) => value)),
     fc.constant(new RetrieveCommand())
   ];
 

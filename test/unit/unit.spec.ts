@@ -72,3 +72,16 @@ test('allows to filter the root array', () => {
   expect(retrieveResult).toEqual([2]);
   expect(retrieveRootResult).toEqual([2]);
 });
+
+test('allows to map the root array', () => {
+  const retrieveResult = deep([1, 2, 3], { clone: true })
+    .map((value: number) => value % 2 === 0)
+    .retrieve();
+
+  const retrieveRootResult = deep([1, 2, 3], { clone: true })
+    .map((value: number) => value % 2 === 0)
+    .retrieveRoot();
+
+  expect(retrieveResult).toEqual([false, true, false]);
+  expect(retrieveRootResult).toEqual([false, true, false]);
+});

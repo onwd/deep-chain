@@ -1,9 +1,12 @@
 import { Context } from '../models';
-import { map as _map } from 'lodash';
+import { isArray, map as _map } from 'lodash';
 
 export const map = (context: Context) =>
                    (mapper: any) => {
-  context.parent[context.key] = _map(context.entry, mapper);
+  if (isArray(context.entry)) {
+    context.parent[context.key] = _map(context.entry, mapper);
+    context.entry = context.parent[context.key];
+  }
 
   return context.chain;
 };
