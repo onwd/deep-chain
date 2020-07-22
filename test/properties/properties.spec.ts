@@ -10,19 +10,19 @@ import { cloneDeep, isEqual } from 'lodash';
 import { deep } from '../../build';
 import { Model, Real } from './models';
 
-const commands = [
-  fc.oneof(fc.string(), fc.integer()).map((key) => new AccessPropertyCommand(key)),
-  fc.oneof(fc.string(), fc.integer()).map((key) => new GetCommand(key)),
-  fc.constant(new FilterCommand()),
-  fc.constant(new FindCommand()),
-  fc.constant(new RetrieveCommand())
-];
-
 test('immutability', () => {
+  const immutabilityCommands = [
+    fc.oneof(fc.string(), fc.integer()).map((key) => new AccessPropertyCommand(key)),
+    fc.oneof(fc.string(), fc.integer()).map((key) => new GetCommand(key)),
+    fc.constant(new FilterCommand(() => true)),
+    fc.constant(new FindCommand()),
+    fc.constant(new RetrieveCommand())
+  ];
+
   fc.assert(
     fc.property(
       fc.object(),
-      fc.commands(commands, 100),
+      fc.commands(immutabilityCommands, 100),
       (object, commands) => {
         const clonedObject = cloneDeep(object);
 
@@ -31,7 +31,7 @@ test('immutability', () => {
             wasRetrieveCalled: false
           }),
           real: new Real({
-            state: deep(object)
+            state: deep(object, { clone: true })
           })
         });
 

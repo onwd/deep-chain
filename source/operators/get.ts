@@ -1,4 +1,4 @@
-import { clone } from 'lodash';
+import { clone, isObject } from 'lodash';
 import { Context } from '../models';
 import { Key } from '../types';
 
@@ -10,7 +10,7 @@ export const get = (context: Context) =>
   if (context.entry === null || context.entry === undefined) {
     context.entry = undefined;
   } else {
-    if (context.clone) {
+    if (context.clone && isObject(context.entry[key])) {
       context.entry[key] = clone(context.entry[key]);
     }
 

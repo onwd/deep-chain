@@ -2,11 +2,13 @@ import { Command } from 'fast-check';
 import { Model, Real } from '../models';
 
 export class FilterCommand implements Command<Model, Real> {
+  constructor(private readonly predicate: Function) {}
+
   public check(model: Readonly<Model>): boolean {
     return !model.wasRetrieveCalled;
   }
 
   public run(_: Model, real: Real): void {
-    real.state = real.state.filter(() => Math.random() < 0.5);
+    real.state = real.state.filter(this.predicate);
   }
 }
