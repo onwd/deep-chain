@@ -7,7 +7,8 @@ import {
   GetCommand,
   MapCommand,
   ModifyCommand,
-  RetrieveCommand
+  RetrieveCommand,
+  RetrieveRootCommand
 } from './commands';
 import { cloneDeep, isEqual } from 'lodash';
 import { deep } from '../../build';
@@ -24,7 +25,8 @@ test('immutability', () => {
     fc.constant(new FindCommand()),
     fc.constant(new MapCommand((value: any) => value)),
     fc.constant(new ModifyCommand(() => {})),
-    fc.constant(new RetrieveCommand())
+    fc.constant(new RetrieveCommand()),
+    fc.constant(new RetrieveRootCommand())
   ];
 
   fc.assert(

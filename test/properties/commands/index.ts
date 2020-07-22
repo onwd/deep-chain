@@ -6,3 +6,4 @@ export { GetCommand } from './get';
 export { MapCommand } from './map';
 export { ModifyCommand } from './modify';
 export { RetrieveCommand } from './retrieve';
+export { RetrieveRootCommand } from './retrieve-root';
