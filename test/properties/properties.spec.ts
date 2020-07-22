@@ -1,6 +1,7 @@
 import * as fc from 'fast-check';
 import {
   AccessPropertyCommand,
+  AssignCommand,
   FilterCommand,
   FindCommand,
   GetCommand,
@@ -18,6 +19,7 @@ test('immutability', () => {
   const immutabilityCommands = [
     fc.oneof(fc.string(), fc.integer()).map((key) => new AccessPropertyCommand(key)),
     fc.oneof(fc.string(), fc.integer()).map((key) => new GetCommand(key)),
+    fc.constant(new AssignCommand({})),
     fc.constant(new FilterCommand(() => true)),
     fc.constant(new FindCommand()),
     fc.constant(new MapCommand((value: any) => value)),
