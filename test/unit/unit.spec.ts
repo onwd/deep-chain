@@ -59,3 +59,16 @@ test('allows to retrieve properties with reserved names', () => {
   expect(retrieveValue).toBe('I am reserved!');
   expect(getValue).toBe('I am reserved as well!');
 });
+
+test('allows to filter the root array', () => {
+  const retrieveResult = deep([1, 2, 3], { clone: true })
+    .filter((value: number) => value % 2 === 0)
+    .retrieve();
+
+  const retrieveRootResult = deep([1, 2, 3], { clone: true })
+    .filter((value: number) => value % 2 === 0)
+    .retrieveRoot();
+
+  expect(retrieveResult).toEqual([2]);
+  expect(retrieveRootResult).toEqual([2]);
+});

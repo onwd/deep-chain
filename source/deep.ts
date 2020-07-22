@@ -7,9 +7,13 @@ import { Options } from './interfaces';
 export function deep(root: any, options?: Options): any {
   root = (options?.clone) ? clone(root) : root;
 
+  const rootWrapper = { root };
+
   const context = new Context({
-    root,
+    rootWrapper,
     entry: root,
+    parent: rootWrapper,
+    key: 'root',
     clone: options?.clone ?? false
   });
 

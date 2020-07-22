@@ -1,10 +1,11 @@
 import { Context } from '../models';
-import { filter as _filter, isArray, isObject } from 'lodash';
+import { filter as _filter, isArray } from 'lodash';
 
 export const filter = (context: Context) =>
                       (predicate: any) => {
-  if (isObject(context.parent) && context.parent.hasOwnProperty(context.key) && isArray(context.entry)) {
+  if (isArray(context.entry)) {
     context.parent[context.key] = _filter(context.entry, predicate);
+    context.entry = context.parent[context.key];
   }
 
   return context.chain;

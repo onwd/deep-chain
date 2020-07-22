@@ -1,7 +1,7 @@
 import { Key } from '../types';
 
 export class Context {
-  public root: any;
+  public rootWrapper: { root: any };
   public entry: any;
   public key: Key;
   public parent: any;
