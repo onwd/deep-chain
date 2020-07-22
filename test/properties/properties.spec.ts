@@ -11,6 +11,8 @@ import { cloneDeep, isEqual } from 'lodash';
 import { deep } from '../../build';
 import { Model, Real } from './models';
 
+const MAX_COMMANDS = 100;
+
 test('immutability', () => {
   const immutabilityCommands = [
     fc.oneof(fc.string(), fc.integer()).map((key) => new AccessPropertyCommand(key)),
@@ -24,7 +26,7 @@ test('immutability', () => {
   fc.assert(
     fc.property(
       fc.object(),
-      fc.commands(immutabilityCommands, 100),
+      fc.commands(immutabilityCommands, MAX_COMMANDS),
       (object, commands) => {
         const clonedObject = cloneDeep(object);
 
