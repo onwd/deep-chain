@@ -1,6 +1,7 @@
 export { assign } from './assign';
 export { filter } from './filter';
 export { find } from './find';
+export { findLast } from './find-last';
 export { get } from './get';
 export { insertAt } from './insert-at';
 export { map } from './map';
