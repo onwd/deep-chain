@@ -14,3 +14,6 @@ export { retrieve } from './retrieve';
 export { retrieveRoot } from './retrieve-root';
 export { set } from './set';
 export { union } from './union';
+
+// TODO:
+//   * omit
