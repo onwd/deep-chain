@@ -16,4 +16,8 @@ export { set } from './set';
 export { union } from './union';
 
 // TODO:
+//   * next
+//   * nextCyclic
 //   * omit
+//   * previous
+//   * previousCyclic
