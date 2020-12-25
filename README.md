@@ -7,7 +7,7 @@ See [Usage](https://github.com/onwd/deep-chain#usage) section for more details.
 ## Installation
 
 ```bash
-$ npm install deep-chain
+$ yarn add deep-chain
 ```
 
 ## Usage
