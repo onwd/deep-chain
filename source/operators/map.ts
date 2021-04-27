@@ -1,5 +1,5 @@
-import { Context } from '../models';
 import { isArray, map as _map } from 'lodash';
+import { Context } from '../models';
 
 export const map = (context: Context) =>
                    (mapper: any) => {

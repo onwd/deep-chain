@@ -1,5 +1,5 @@
-import { Context } from '../models';
 import { findLast as _findLast } from 'lodash';
+import { Context } from '../models';
 
 export const findLast = (context: Context) =>
                         (predicate: any) => {

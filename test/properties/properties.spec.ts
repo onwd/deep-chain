@@ -1,18 +1,7 @@
 import * as fc from 'fast-check';
-import {
-  AccessPropertyCommand,
-  AssignCommand,
-  FilterCommand,
-  FindCommand,
-  FindLastCommand,
-  GetCommand,
-  MapCommand,
-  ModifyCommand,
-  RetrieveCommand,
-  RetrieveRootCommand
-} from './commands';
 import { cloneDeep, isEqual } from 'lodash';
 import { deep } from '../../build';
+import { AccessPropertyCommand, AssignCommand, FilterCommand, FindCommand, FindLastCommand, GetCommand, MapCommand, ModifyCommand, RetrieveCommand, RetrieveRootCommand } from './commands';
 import { Model, Real } from './models';
 
 const MAX_COMMANDS = 100;
@@ -34,7 +23,7 @@ test('immutability', () => {
   fc.assert(
     fc.property(
       fc.object(),
-      fc.commands(immutabilityCommands, MAX_COMMANDS),
+      fc.commands(immutabilityCommands, { maxCommands: MAX_COMMANDS }),
       (object, commands) => {
         const clonedObject = cloneDeep(object);
 

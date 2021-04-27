@@ -1,5 +1,5 @@
-import { Context } from '../models';
 import { isArray, union as _union } from 'lodash';
+import { Context } from '../models';
 
 export const union = (context: Context) =>
                      (...arrays: Array<any>) => {

@@ -1,5 +1,5 @@
+import { isArray } from 'lodash';
 import { Context } from '../models';
-import { isArray, map as _map } from 'lodash';
 
 export const push = (context: Context) =>
                     (...items: Array<any>) => {

@@ -1,5 +1,5 @@
-import { Context } from '../models';
 import { isArray } from 'lodash';
+import { Context } from '../models';
 
 export const insertAt = (context: Context) =>
                         (index: number, ...items: Array<any>) => {

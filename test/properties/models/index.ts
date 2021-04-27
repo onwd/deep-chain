@@ -1,2 +1,2 @@
-export { Model } from './model';
-export { Real } from './real';
+export * from './model';
+export * from './real';

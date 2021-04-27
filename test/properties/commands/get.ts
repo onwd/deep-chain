@@ -1,7 +1,7 @@
 import { Command } from 'fast-check';
-import { Key } from '../types';
 import { keys, sample } from 'lodash';
 import { Model, Real } from '../models';
+import { Key } from '../types';
 
 export class GetCommand implements Command<Model, Real> {
   constructor(private readonly key: Key) {}

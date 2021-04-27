@@ -1,5 +1,5 @@
-import { Context } from '../models';
 import { filter as _filter, isArray } from 'lodash';
+import { Context } from '../models';
 
 export const filter = (context: Context) =>
                       (predicate: any) => {

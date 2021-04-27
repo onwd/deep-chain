@@ -1,1 +1,1 @@
-export { Key } from './key';
+export * from './key';
